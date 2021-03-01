@@ -9,6 +9,6 @@ public class Main {
 
         final Taquin taquin = new Taquin(initialState, finalState);
 
-        TaquinSolver.bestFirst(taquin);
+        TaquinSolver.bestFirstSearch(taquin);
     }
 }

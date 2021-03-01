@@ -63,7 +63,7 @@ public class TaquinSolver {
      * La liste open est trié en fonction de l'heuristique utilisé.
      * @param taquin
      */
-    public static void bestFirst(Taquin taquin) {
+    public static void bestFirstSearch(Taquin taquin) {
         ArrayList<State> open = new ArrayList<>();
         ArrayList<State> close = new ArrayList<>();
 
@@ -81,7 +81,9 @@ public class TaquinSolver {
             }
 
             Comparator<State> comparator = (state1, state2) ->
-                    (hammingDistance(state1, taquin.getFinalState()) > hammingDistance(state2, taquin.getFinalState())) ? 1 : (hammingDistance(state1, taquin.getFinalState()) == hammingDistance(state2, taquin.getFinalState()) ? 0 : -1);
+                    (Heuristic.hammingDistance(state1, taquin.getFinalState()) > Heuristic.hammingDistance(state2, taquin.getFinalState()))
+                            ? 1 : (Heuristic.hammingDistance(state1, taquin.getFinalState()) == Heuristic.hammingDistance(state2, taquin.getFinalState())
+                            ? 0 : -1);
 
             Collections.sort(open, comparator);
         }
@@ -89,24 +91,5 @@ public class TaquinSolver {
         if (open.isEmpty())
             System.out.println("Pas de solution");
         else System.out.println(open.get(0) + "\nest une solution !");
-    }
-
-    /**
-     * Prmière heuristique. Cette fonction calcule la distance de Hamming entre deux états du jeu du Taquin
-     * @param state1
-     * @param state2
-     * @return distance de Hamming entre state1 et state2
-     */
-    public static int hammingDistance(State state1, State state2) {
-        int hammingDistance = 0;
-
-        for (int i = 0; i < state1.getNumberOfLines(); i++) {
-            for (int j = 0; j < state1.getNumberOfColumns(); j++) {
-                if (state1.getTile(i, j) != state2.getTile(i, j))
-                    hammingDistance += 1;
-            }
-        }
-
-        return hammingDistance;
     }
 }
