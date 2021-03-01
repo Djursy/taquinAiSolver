@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
+/**
+ * Classe qui représente les états du jeu du Taquin.
+ * on y retrouve trois paramètres, le nombre de lignes, le nombre de colonnes, et les tableau bidimensionnel de char.
+ */
 public class State implements Cloneable {
 
     private int numberOfLines;
@@ -38,6 +42,9 @@ public class State implements Cloneable {
         this.state[lineIndex][columnIndex] = value;
     }
 
+    /**
+     * @return la position du la case vide.
+     */
     public Position getEmptyPosition() {
         for (int i = 0; i < numberOfLines; i++) {
             for (int j = 0; j < numberOfColumns; j++) {
@@ -49,12 +56,21 @@ public class State implements Cloneable {
         return null;
     }
 
+    /**
+     * Fonction qui intervertit de case du tableau, les positions de ces deux cases lui sont données en paramètres.
+     * @param pos1
+     * @param pos2
+     */
     public void swap(Position pos1, Position pos2) {
         char temp = state[pos2.getX()][pos2.getY()];
         this.setStateIndex(pos2.getX(), pos2.getY(), state[pos1.getX()][pos1.getY()]);
         this.setStateIndex(pos1.getX(), pos1.getY(), temp);
     }
 
+    /**
+     * Fonction qui génère les fils de l'état courant, c'est-à-dire les différents états accessibles à partir de l'état courant
+     * @return une liste des fils générés
+     */
     public ArrayList<State> getChilds() {
         ArrayList<State> childs = new ArrayList<>();
         Position emptyPos = this.getEmptyPosition();
@@ -91,7 +107,7 @@ public class State implements Cloneable {
         if (numberOfLines == state1.numberOfLines && numberOfColumns == state1.numberOfColumns) {
             for (int i = 0; i < this.numberOfLines; i++) {
                 for (int j = 0; j < this.numberOfColumns; j++) {
-                    if (this.state[i][j] != ((State) o).getState(i, j))
+                    if (this.state[i][j] != ((State) o).getTile(i, j))
                         return false;
                 }
             }
@@ -99,7 +115,12 @@ public class State implements Cloneable {
         return true;
     }
 
-    public char getState(int i, int j) {
+    /**
+     * @param i
+     * @param j
+     * @return la valeur de la case à la position (i,j) de l'état courant
+     */
+    public char getTile(int i, int j) {
         return state[i][j];
     }
 

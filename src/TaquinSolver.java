@@ -5,6 +5,9 @@ import java.util.Stack;
 
 public class TaquinSolver {
 
+    /**
+     * @param taquin Premier parcours de recherche, le parcours en profondeur
+     */
     public static void depthSearch(Taquin taquin) {
         Stack<State> open = new Stack<>();
         Stack<State> close = new Stack<>();
@@ -28,6 +31,10 @@ public class TaquinSolver {
         else System.out.println(open.peek() + "\nest une solution !");
     }
 
+    /**
+     * Deuxième parcours de recherche, le parcours en largeur.
+     * @param taquin
+     */
     public static void widthSearch(Taquin taquin) {
         ArrayList<State> open = new ArrayList<>();
         ArrayList<State> close = new ArrayList<>();
@@ -51,6 +58,11 @@ public class TaquinSolver {
         else System.out.println(open.get(0) + "\nest une solution !");
     }
 
+    /**
+     * Troisième parcours de recherche, il s'agit de la recherche du meilleur d'abord.
+     * La liste open est trié en fonction de l'heuristique utilisé.
+     * @param taquin
+     */
     public static void bestFirst(Taquin taquin) {
         ArrayList<State> open = new ArrayList<>();
         ArrayList<State> close = new ArrayList<>();
@@ -79,12 +91,18 @@ public class TaquinSolver {
         else System.out.println(open.get(0) + "\nest une solution !");
     }
 
+    /**
+     * Prmière heuristique. Cette fonction calcule la distance de Hamming entre deux états du jeu du Taquin
+     * @param state1
+     * @param state2
+     * @return distance de Hamming entre state1 et state2
+     */
     public static int hammingDistance(State state1, State state2) {
         int hammingDistance = 0;
 
         for (int i = 0; i < state1.getNumberOfLines(); i++) {
             for (int j = 0; j < state1.getNumberOfColumns(); j++) {
-                if (state1.getState(i, j) != state2.getState(i, j))
+                if (state1.getTile(i, j) != state2.getTile(i, j))
                     hammingDistance += 1;
             }
         }

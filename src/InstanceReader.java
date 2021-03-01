@@ -1,5 +1,8 @@
 import java.io.*;
 
+/**
+ * C'est la classe qui lit les instances du jeu du Taquin proposés en cours.
+ */
 public class InstanceReader {
 
     private BufferedReader bufferedReader;
