@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException, CloneNotSupportedException {
+    public static void main(String[] args) throws IOException{
         final InstanceReader instanceReaderTest = new InstanceReader("testTaquin");
 
         final State initialState = instanceReaderTest.getInitialState();

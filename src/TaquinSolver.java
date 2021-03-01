@@ -6,9 +6,11 @@ import java.util.Stack;
 public class TaquinSolver {
 
     /**
-     * @param taquin Premier parcours de recherche, le parcours en profondeur
+     * Premier parcours de recherche, le parcours en profondeur
      */
     public static void depthSearch(Taquin taquin) {
+        long debut = System.currentTimeMillis();
+
         Stack<State> open = new Stack<>();
         Stack<State> close = new Stack<>();
 
@@ -29,13 +31,16 @@ public class TaquinSolver {
         if (open.isEmpty())
             System.out.println("Pas de solution");
         else System.out.println(open.peek() + "\nest une solution !");
+
+        System.out.println(System.currentTimeMillis() - debut);
     }
 
     /**
      * Deuxième parcours de recherche, le parcours en largeur.
-     * @param taquin
      */
     public static void widthSearch(Taquin taquin) {
+        long debut = System.currentTimeMillis();
+
         ArrayList<State> open = new ArrayList<>();
         ArrayList<State> close = new ArrayList<>();
 
@@ -56,14 +61,17 @@ public class TaquinSolver {
         if (open.isEmpty())
             System.out.println("Pas de solution");
         else System.out.println(open.get(0) + "\nest une solution !");
+
+        System.out.println(System.currentTimeMillis() - debut);
     }
 
     /**
      * Troisième parcours de recherche, il s'agit de la recherche du meilleur d'abord.
      * La liste open est trié en fonction de l'heuristique utilisé.
-     * @param taquin
      */
     public static void bestFirstSearch(Taquin taquin) {
+        long debut = System.currentTimeMillis();
+
         ArrayList<State> open = new ArrayList<>();
         ArrayList<State> close = new ArrayList<>();
 
@@ -91,5 +99,7 @@ public class TaquinSolver {
         if (open.isEmpty())
             System.out.println("Pas de solution");
         else System.out.println(open.get(0) + "\nest une solution !");
+
+        System.out.println(System.currentTimeMillis() - debut);
     }
 }
