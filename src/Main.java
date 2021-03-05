@@ -7,7 +7,12 @@ public class Main {
             final State initialState = instanceReaderTest.getInitialState();
             final State finalState = instanceReaderTest.getFinalState();
             final Taquin taquin = new Taquin(initialState, finalState);
+            System.out.println( "Depth-first search:");
             TaquinSolver.depthSearch(taquin);
+            System.out.println( "Best-first search:");
+            TaquinSolver.bestFirstSearch(taquin);
+            System.out.println( "Breadth-first search:");
+            TaquinSolver.widthSearch(taquin);
         }
     }
 }
