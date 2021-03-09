@@ -6,5 +6,5 @@ ijkl
 abcd
 efgh
 ijkl
-mno  
+mno
 .
