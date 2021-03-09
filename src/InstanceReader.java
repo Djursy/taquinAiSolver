@@ -39,7 +39,7 @@ public class InstanceReader {
             }
 
             for (int j = 0; j < currentLine.length(); j++) {
-                if (currentLine.charAt(j) == ' ')
+                if (currentLine.charAt(j) == '.')
                     this.initialState.setStateIndex(i, j, '0');
                 else this.initialState.setStateIndex(i, j, currentLine.charAt(j));
             }
@@ -50,9 +50,6 @@ public class InstanceReader {
 
             for (int j = 0; j < currentLine.length(); j++) {
                 if (currentLine.charAt(j) == '.')
-                    continue;
-
-                if (currentLine.charAt(j) == ' ')
                     this.finalState.setStateIndex(i, j, '0');
                 else this.finalState.setStateIndex(i, j, currentLine.charAt(j));
             }
