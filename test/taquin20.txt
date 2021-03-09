@@ -1,12 +1,11 @@
 5
 abcde
 fghij
-mn ot
+mn.ot
 lkqrs
 puvwx
 abcde
 fghij
 klmno
 pqrst
-uvwx 
-.
+uvwx.

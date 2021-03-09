@@ -1,6 +1,5 @@
 2
 fnlu
-ei s
+ei.s
 elus
-fin 
-.
+fin.

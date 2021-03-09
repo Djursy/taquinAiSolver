@@ -2,11 +2,10 @@
 fahce
 kbmdj
 pgrio
-u wnt
+u.wnt
 qlvsx
 abcde
 fghij
 klmno
 pqrst
-uvwx 
-.
+uvwx.

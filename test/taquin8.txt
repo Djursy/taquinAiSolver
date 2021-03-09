@@ -1,8 +1,7 @@
 3
 seul
-kit 
+kit.
 farn
 elus
 kart
-fin 
-.
+fin.

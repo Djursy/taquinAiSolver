@@ -1,10 +1,9 @@
 4
 ainh
- cdl
+.cdl
 gbkf
 ojme
 abcd
 efgh
 ijkl
-mno 
-.
+mno.

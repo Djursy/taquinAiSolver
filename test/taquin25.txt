@@ -3,10 +3,9 @@ abcde
 fghij
 klmno
 pqrst
-uvwx 
+uvwx.
 klmno
 pqrst
-uvwx 
+uvwx.
 abcde
 fghij
-.

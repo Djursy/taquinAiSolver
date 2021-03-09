@@ -1,10 +1,9 @@
 4
 abcd
 mfng
-e ho
+e.ho
 ijkl
 abcd
 efgh
 ijkl
-mno 
-.
+mno.

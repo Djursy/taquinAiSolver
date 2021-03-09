@@ -1,6 +1,5 @@
 2
 lnuf
-e is
+e.is
 elus
-fin 
-.
+fin.

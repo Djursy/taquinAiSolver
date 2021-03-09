@@ -1,10 +1,9 @@
 4
 abcd
-mno 
+mno.
 efgh
 ijkl
 abcd
 efgh
 ijkl
-mno
-.
+mno.

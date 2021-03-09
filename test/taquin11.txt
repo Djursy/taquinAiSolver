@@ -1,8 +1,7 @@
 3
-kel 
+kel.
 itus
 farn
 elus
 kart
-fin 
-.
+fin.

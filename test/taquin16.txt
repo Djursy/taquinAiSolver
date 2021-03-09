@@ -1,10 +1,9 @@
 4
-o lc
+o.lc
 edgm
 jnki
 habf
 abcd
 efgh
 ijkl
-mno
-.
+mno.
