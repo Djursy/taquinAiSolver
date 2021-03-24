@@ -9,7 +9,7 @@ public class TaquinSolver {
      * Premier parcours de recherche, le parcours en profondeur
      */
     public static void depthSearch(Taquin taquin) {
-        long debut = System.currentTimeMillis();
+        long beginTime = System.currentTimeMillis();
 
         Stack<State> open = new Stack<>();
         Stack<State> close = new Stack<>();
@@ -26,20 +26,26 @@ public class TaquinSolver {
                     open.push(child);
                 }
             }
+
+            System.out.println(open.size());
         }
 
-        if (open.isEmpty())
-            System.out.println("Pas de solution");
-        else System.out.println(open.peek() + "\nest une solution !");
+        if (open.isEmpty()) {
+            System.out.println("L'instance est non-soluble !");
+        } else {
+            System.out.println("L'instance est soluble !");
+        }
 
-        System.out.println(System.currentTimeMillis() - debut);
+        System.out.println("Temps d'éxecution : " + (System.currentTimeMillis() - beginTime));
+        System.out.println("Nombre d'états dans la liste ouverte : " + open.size());
+        System.out.println("Nombre d'états dans la liste fermée : " + close.size());
     }
 
     /**
      * Deuxième parcours de recherche, le parcours en largeur.
      */
-    public static void widthSearch(Taquin taquin) {
-        long debut = System.currentTimeMillis();
+    public static void breadthSearch(Taquin taquin) {
+        long beginTime = System.currentTimeMillis();
 
         ArrayList<State> open = new ArrayList<>();
         ArrayList<State> close = new ArrayList<>();
@@ -58,19 +64,23 @@ public class TaquinSolver {
             }
         }
 
-        if (open.isEmpty())
-            System.out.println("Pas de solution");
-        else System.out.println(open.get(0) + "\nest une solution !");
+        if (open.isEmpty()) {
+            System.out.println("L'instance est non-soluble !");
+        } else {
+            System.out.println("L'instance est soluble !");
+        }
 
-        System.out.println(System.currentTimeMillis() - debut);
+        System.out.println("Temps d'éxecution : " +  (System.currentTimeMillis() - beginTime));
+        System.out.println("Nombre d'états dans la liste ouverte : " + open.size());
+        System.out.println("Nombre d'états dans la liste fermée : " + close.size());
     }
 
     /**
      * Troisième parcours de recherche, il s'agit de la recherche du meilleur d'abord.
      * La liste open est trié en fonction de l'heuristique utilisé.
      */
-    public static void bestFirstSearch(Taquin taquin) {
-        long debut = System.currentTimeMillis();
+    public static void bestFirstSearch(Taquin taquin, int heuristic) {
+        long beginTime = System.currentTimeMillis();
 
         ArrayList<State> open = new ArrayList<>();
         ArrayList<State> close = new ArrayList<>();
@@ -87,19 +97,26 @@ public class TaquinSolver {
                     open.add(child);
                 }
             }
+            Comparator<State> comparator = null;
 
-            Comparator<State> comparator = (state1, state2) ->
-                    (Heuristic.hammingDistance(state1, taquin.getFinalState()) > Heuristic.hammingDistance(state2, taquin.getFinalState()))
-                            ? 1 : (Heuristic.hammingDistance(state1, taquin.getFinalState()) == Heuristic.hammingDistance(state2, taquin.getFinalState())
-                            ? 0 : -1);
+            if (heuristic == 1) {
+                comparator = (state1, state2) ->
+                        (Heuristic.hammingDistance(state1, taquin.getFinalState()) > Heuristic.hammingDistance(state2, taquin.getFinalState()))
+                                ? 1 : (Heuristic.hammingDistance(state1, taquin.getFinalState()) == Heuristic.hammingDistance(state2, taquin.getFinalState())
+                                ? 0 : -1);
+            }
 
             Collections.sort(open, comparator);
         }
 
-        if (open.isEmpty())
-            System.out.println("Pas de solution");
-        else System.out.println(open.get(0) + "\nest une solution !");
+        if (open.isEmpty()) {
+            System.out.println("L'instance est non-soluble !");
+        } else {
+            System.out.println("L'instance est soluble !");
+        }
 
-        System.out.println(System.currentTimeMillis() - debut);
+        System.out.println("Temps d'éxecution : " + (System.currentTimeMillis() - beginTime));
+        System.out.println("Nombre d'états dans la liste ouverte : " + open.size());
+        System.out.println("Nombre d'états dans la liste fermée : " + close.size());
     }
 }
