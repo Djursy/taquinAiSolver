@@ -11,6 +11,8 @@ public class TaquinSolver {
     public static void depthSearch(Taquin taquin) {
         long beginTime = System.currentTimeMillis();
 
+        System.out.println("Work in progress");
+
         Stack<State> open = new Stack<>();
         Stack<State> close = new Stack<>();
 
@@ -44,6 +46,8 @@ public class TaquinSolver {
      */
     public static void breadthSearch(Taquin taquin) {
         long beginTime = System.currentTimeMillis();
+
+        System.out.println("Work in progress");
 
         ArrayList<State> open = new ArrayList<>();
         ArrayList<State> close = new ArrayList<>();
@@ -79,6 +83,8 @@ public class TaquinSolver {
      */
     public static void bestFirstSearch(Taquin taquin, int heuristic) {
         long beginTime = System.currentTimeMillis();
+
+        System.out.println("Work in progress");
 
         ArrayList<State> open = new ArrayList<>();
         ArrayList<State> close = new ArrayList<>();

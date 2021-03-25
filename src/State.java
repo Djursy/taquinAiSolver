@@ -58,8 +58,8 @@ public class State implements Cloneable {
 
     /**
      * Fonction qui intervertit de case du tableau, les positions de ces deux cases lui sont données en paramètres.
-     * @param pos1
-     * @param pos2
+     * @param pos1 Coordonées de la tuile 1
+     * @param pos2 Coordonées de la tuile 2
      */
     public void swap(Position pos1, Position pos2) {
         char temp = state[pos2.getX()][pos2.getY()];
@@ -116,8 +116,8 @@ public class State implements Cloneable {
     }
 
     /**
-     * @param i
-     * @param j
+     * @param i ordonné de la tuile à récupérer
+     * @param j abscisse de la tuile à récupérer
      * @return la valeur de la case à la position (i,j) de l'état courant
      */
     public char getTile(int i, int j) {
