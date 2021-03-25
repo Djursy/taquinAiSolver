@@ -36,7 +36,7 @@ public class TaquinSolver {
             System.out.println("L'instance est soluble !");
         }
 
-        System.out.println("Temps d'éxecution : " + (System.currentTimeMillis() - beginTime));
+        System.out.println("Temps d'éxecution : " + ((System.currentTimeMillis() - beginTime) / 1000) + " sec");
         System.out.println("Nombre d'états dans la liste ouverte : " + open.size());
         System.out.println("Nombre d'états dans la liste fermée : " + close.size());
     }
@@ -72,7 +72,7 @@ public class TaquinSolver {
             System.out.println("L'instance est soluble !");
         }
 
-        System.out.println("Temps d'éxecution : " +  (System.currentTimeMillis() - beginTime));
+        System.out.println("Temps d'éxecution : " +  ((System.currentTimeMillis() - beginTime) / 1000) + " sec");
         System.out.println("Nombre d'états dans la liste ouverte : " + open.size());
         System.out.println("Nombre d'états dans la liste fermée : " + close.size());
     }
@@ -119,7 +119,7 @@ public class TaquinSolver {
             System.out.println("L'instance est soluble !");
         }
 
-        System.out.println("Temps d'éxecution : " + (System.currentTimeMillis() - beginTime));
+        System.out.println("Temps d'éxecution : " + ((System.currentTimeMillis() - beginTime) / 1000) + " sec");
         System.out.println("Nombre d'états dans la liste ouverte : " + open.size());
         System.out.println("Nombre d'états dans la liste fermée : " + close.size());
     }
