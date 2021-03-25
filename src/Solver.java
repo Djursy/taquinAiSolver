@@ -15,11 +15,11 @@ public class Solver {
 
             switch (args[0]) {
                 case "p":
-                    System.out.println( "Launching a depth-first search on the instance :");
+                    System.out.println( "Launching a depth-first search on the instance " + args[1] + " :");
                     TaquinSolver.depthSearch(taquin);
                     break;
                 case "l":
-                    System.out.println( "Launching a breadth-first search on the instance :");
+                    System.out.println( "Launching a breadth-first search on the instance " + args[1] + " :");
                     TaquinSolver.breadthSearch(taquin);
                     break;
                 default:
@@ -35,7 +35,7 @@ public class Solver {
 
                 switch (args[1]) {
                     case "1":
-                        System.out.println( "Launching a best-first search on the instance with the heuristic 'Distance of Hamming' :");
+                        System.out.println( "Launching a best-first search on the instance " + args[2] + " with the heuristic 'Distance of Hamming' :");
                         TaquinSolver.bestFirstSearch(taquin, Integer.parseInt(args[1]));
                         break;
                     default:

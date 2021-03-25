@@ -26,8 +26,6 @@ public class TaquinSolver {
                     open.push(child);
                 }
             }
-
-            System.out.println(open.size());
         }
 
         if (open.isEmpty()) {
